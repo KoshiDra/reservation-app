@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
-//  title = 'reservation-app';
-}
+export class NavbarComponent { }
