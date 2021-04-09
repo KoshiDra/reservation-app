@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const config = require('./config/dev');
-const FakeDB = require('./fake-db');
+// const FakeDB = require('./fake-db');
 
 const productRoutes = require('./routes/products');
 
@@ -12,17 +12,13 @@ mongoose.connect(config.DB_URI, {
   useCreateIndex: true
 }).then(
   () => {
-    new FakeDB().initDB();
+    // new FakeDB().initDB();
   }
 );
 
 const app = express();
 
 app.use('/api/v1/products', productRoutes);
-
-app.get('/products', function(req, res){
-  res.json({'success': true});
-});
 
 const PORT = process.env.PORT || '3001';
 
